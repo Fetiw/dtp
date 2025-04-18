@@ -1,0 +1,26 @@
+@use "@global" as *;
+
+.logo {
+  position: relative;
+  z-index: 1;
+
+  &__svg {
+    aspect-ratio: 130 / 31;
+    @include adaptive-value('width', 130, 95);
+  }
+
+  &__bg {
+    aspect-ratio: 180 / 70;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 130%;
+    z-index: -1;
+    max-width: none;
+
+    @include breakpoint('lg') {
+      width: 150%;
+    }
+  }
+}

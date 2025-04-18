@@ -1,0 +1,27 @@
+@use "@global" as *;
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  inset-inline: 0;
+  top: 0;
+  z-index: 10;
+  background-color: var(--clr-base-bg);
+  transition: padding-block var(--transition);
+  @include adaptive-value('gap', 100, 60);
+  @include adaptive-value('padding-block', 50, 20);
+
+  &.is-sticky {
+    padding-block: 20px;
+  }
+
+  .menu {
+    display: none;
+
+    @include breakpoint('lg') {
+      display: flex;
+    }
+  }
+}

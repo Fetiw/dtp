@@ -1,0 +1,44 @@
+@use "@global" as *;
+
+.link-contact {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  &__link {
+    font-weight: 500;
+    color: var(--clr-base-bg);
+    transition: color var(--transition);
+    line-height: 1;
+    position: relative;
+    @include adaptive-value('font-size', 19, 16);
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: calc(100% + 4px);
+      inset-inline: 0;
+      height: 2px;
+      opacity: 0;
+      background-image: linear-gradient(90deg, var(--clr-nepal), var(--clr-nepal) 50%, transparent 50%, transparent 100%);
+      background-size: 10px 1px;
+      transition: opacity var(--transition);
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--clr-nepal);
+
+        &::after {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  svg {
+    width: 24px;
+    aspect-ratio: 1;
+    color: var(--clr-aquamarine);
+  }
+}

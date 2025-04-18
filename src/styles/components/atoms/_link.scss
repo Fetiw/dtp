@@ -1,0 +1,22 @@
+.link,
+a {
+  --link-color: var(--clr-base);
+
+  display: inline-flex;
+  color: var(--link-color);
+  text-decoration: none;
+
+  &[href*="tel"] {
+    text-decoration: underline;
+  }
+
+  &:not([class]) {
+    @media (hover: hover) {
+      transition: opacity var(--transition), color var(--transition);
+
+      &:hover {
+        opacity: .7;
+      }
+    }
+  }
+}

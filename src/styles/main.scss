@@ -1,0 +1,43 @@
+@forward "swiper/css";
+@forward "swiper/css/effect-fade";
+
+@use "base/base";
+@use "base/typography";
+
+@use "components/atoms/logo";
+@use "components/atoms/input";
+@use "components/atoms/input-file";
+@use "components/atoms/link";
+@use "components/atoms/btn";
+@use "components/atoms/link-contact";
+@use "components/atoms/link-social";
+@use "components/atoms/swiper-pagination";
+@use "components/atoms/elastic-gradient";
+@use "components/atoms/label-sticky";
+@use "components/atoms/label";
+
+@use "components/molecules/item-accordion";
+@use "components/molecules/item-phone";
+@use "components/molecules/item-hover";
+@use "components/molecules/form-group";
+
+@use "components/organisms/menu";
+@use "components/organisms/block-contact";
+@use "components/organisms/block-form";
+@use "components/organisms/form-contact";
+@use "components/organisms/card-percent";
+@use "components/organisms/card-rule";
+@use "components/organisms/card";
+@use "components/organisms/editor-content";
+
+@use "components/templates/section-we-understand";
+@use "components/templates/section-cooperation";
+@use "components/templates/section-how-payment";
+@use "components/templates/section-question";
+@use "components/templates/section-receive";
+@use "components/templates/section-content";
+@use "components/templates/section-banner";
+@use "components/templates/section-trust";
+@use "components/templates/section";
+@use "components/templates/header";
+@use "components/templates/footer";

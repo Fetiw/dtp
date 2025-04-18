@@ -1,0 +1,38 @@
+@use "@global" as *;
+
+.card-percent {
+  border-radius: 12px;
+  background-color: var(--clr-gable-green);
+  padding: 36px;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  position: relative;
+
+  &__picture {
+    @include breakpoint('lg') {
+      position: absolute;
+      left: 30px;
+      top: 0;
+      transform: translateY(-30%);
+    }
+  }
+}
+
+.item-percent {
+  line-height: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  color: var(--clr-base-bg);
+
+  &__number {
+    font-family: var(--family-second), sans-serif;
+    font-size: 68px;
+  }
+
+  &__content {
+    font-weight: 600;
+    @include adaptive-value('font-size', 22, 19);
+  }
+}

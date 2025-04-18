@@ -1,0 +1,30 @@
+@use "@global" as *;
+
+.label {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 20px;
+  position: absolute;
+
+  &__content {
+    border-radius: 12px;
+    background-color: var(--clr-pattens-blue);
+    font-weight: 600;
+    width: 320px;
+    @include adaptive-value('font-size', 17, 10);
+    @include adaptive-value('padding-inline', 26, 16);
+    @include adaptive-value('padding-block', 20, 12);
+  }
+}
+
+.dot {
+  width: 10px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.picture {
+  border-radius: 12px;
+  overflow: hidden;
+}

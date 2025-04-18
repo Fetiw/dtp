@@ -1,0 +1,85 @@
+@use "@global" as *;
+
+.section-cooperation {
+  display: grid;
+  @include adaptive-value('gap', 30, 28);
+
+  &__header {
+    text-align: center;
+
+    @include breakpoint('lg') {
+      max-width: 620px;
+      margin-inline: auto;
+    }
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    @include adaptive-value('gap', 10, 5);
+
+    @include breakpoint('md') {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoint('lg') {
+      grid-template-columns: repeat(12, 1fr);
+      position: relative;
+    }
+
+    .card {
+      @include breakpoint('lg') {
+        grid-column: span 4;
+      }
+
+      &--black {
+        @include breakpoint('lg') {
+          grid-column: span 6;
+          rotate: -3deg;
+        }
+      }
+    }
+  }
+
+  .line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+
+    @include breakpoint('lg') {
+      top: 24%;
+      right: -2%;
+      left: auto;
+      z-index: 1;
+    }
+
+    .picture {
+      position: absolute;
+      bottom: 100%;
+      rotate: -20deg;
+      @include adaptive-value('width', 202, 104);
+
+      @include breakpoint('lg') {
+        top: 50%;
+        left: 30%;
+        bottom: auto;
+      }
+    }
+
+    svg {
+      scale: 1.5;
+      top: 12%;
+      right: 20%;
+      position: absolute;
+
+      @include breakpoint('lg') {
+        scale: initial;
+        top: initial;
+        right: auto;
+        position: static;
+      }
+    }
+  }
+}

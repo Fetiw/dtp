@@ -1,0 +1,26 @@
+@use "@global" as *;
+
+.section {
+  display: grid;
+  @include adaptive-value('gap', 30, 28);
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    @include adaptive-value('gap', 10, 5);
+
+    @include breakpoint('md') {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoint('lg') {
+      grid-template-columns: repeat(12, 1fr);
+    }
+
+    & > * {
+      @include breakpoint('lg') {
+        grid-column: span 4;
+      }
+    }
+  }
+}

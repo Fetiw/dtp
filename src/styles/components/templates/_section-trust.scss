@@ -1,0 +1,41 @@
+@use "@global" as *;
+
+.section-trust {
+  display: grid;
+  @include adaptive-value('gap', 30, 28);
+
+  &__header {
+    @include breakpoint('lg') {
+      text-align: center;
+      max-width: 620px;
+      margin-inline: auto;
+    }
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    @include adaptive-value('gap', 10, 5);
+
+    @include breakpoint('md') {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoint('lg') {
+      grid-template-columns: repeat(12, 1fr);
+    }
+
+    & > * {
+      @include breakpoint('lg') {
+        grid-column: span 4;
+      }
+    }
+  }
+
+  .card--black {
+    @include breakpoint('lg') {
+      rotate: 7deg;
+      scale: 1.1;
+    }
+  }
+}

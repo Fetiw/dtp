@@ -1,0 +1,72 @@
+@use "@global" as *;
+
+.item-hover {
+  --transition: 300ms linear;
+
+  display: grid;
+  border-radius: 12px;
+  transition: background-color var(--transition);
+
+  &__header {
+    padding-block: 22px;
+    text-align: center;
+    color: var(--clr-nepal);
+    transition: color var(--transition);
+    @include adaptive-value('padding-inline', 84, 16);
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows var(--transition);
+  }
+
+  &__content {
+    transition: opacity var(--transition), padding-block var(--transition);
+    overflow: hidden;
+    opacity: 0;
+    padding-bottom: 0;
+    text-align: center;
+    font-weight: 500;
+    @include adaptive-value('font-size', 22, 16);
+    @include adaptive-value('padding-inline', 120, 16);
+  }
+
+  @media (hover: none) {
+    background-color: var(--clr-pattens-blue);
+
+    &__header {
+      color: var(--clr-base);
+    }
+
+    &__wrapper {
+      grid-template-rows: 1fr;
+    }
+
+    &__content {
+      opacity: 1;
+      padding-bottom: 22px;
+    }
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--clr-pattens-blue);
+    }
+
+    &:hover & {
+      &__header {
+        color: var(--clr-base);
+      }
+
+      &__wrapper {
+        grid-template-rows: 1fr;
+      }
+
+      &__content {
+        opacity: 1;
+        padding-bottom: 22px;
+      }
+    }
+  }
+}

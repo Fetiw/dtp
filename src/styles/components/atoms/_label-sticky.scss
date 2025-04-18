@@ -1,0 +1,15 @@
+@use "@global" as *;
+
+.label-sticky {
+  font-family: var(--family-second), sans-serif;
+  border-radius: 12px;
+  display: inline-flex;
+  align-self: flex-start;
+  background-color: var(--clr-gable-green);
+  color: var(--clr-base-bg);
+  line-height: 1;
+  letter-spacing: 0.06em;
+  @include adaptive-value('padding', 24, 16);
+  @include adaptive-value('font-size', 40, 27);
+  @include adaptive-value('max-width', 450, 320);
+}

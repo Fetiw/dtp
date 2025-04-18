@@ -1,0 +1,54 @@
+.link-social {
+  --social-link-bg: var(--clr-base);
+  --social-link-bg-hover: var(--clr-base);
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  &__link {
+    width: 74px;
+    aspect-ratio: 1;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--clr-pattens-blue);
+    background-color: var(--social-link-bg);
+
+    @media (hover: hover) {
+      transition: background-color var(--transition);
+
+      &:hover {
+        background-color: var(--social-link-bg-hover);
+      }
+    }
+  }
+
+  span {
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 1;
+    align-self: center;
+  }
+
+  svg {
+    width: 50%;
+    aspect-ratio: 1;
+  }
+
+  [href*="t.me"] {
+    --social-link-bg: #4CB5E2;
+    --social-link-bg-hover: #368CB1;
+  }
+
+  [href*="viber"] {
+    --social-link-bg: #AE6ED0;
+    --social-link-bg-hover: #834F9F;
+  }
+
+  [href*="wa.me"] {
+    --social-link-bg: #57C974;
+    --social-link-bg-hover: #438B55;
+  }
+}

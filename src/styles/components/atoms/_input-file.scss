@@ -1,0 +1,51 @@
+.input-file {
+  height: 100%;
+  display: flex;
+  aspect-ratio: 1;
+
+  input {
+    appearance: none;
+    width: .1px;
+    height: .1px;
+    position: absolute;
+    outline: none;
+    opacity: 0;
+  }
+
+  &__main {
+    box-shadow: inset 0 0 0 2px hsl(from var(--clr-base-bg) h s l / .2);
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    aspect-ratio: 1;
+
+    @media (hover: hover) {
+      cursor: pointer;
+      transition: box-shadow var(--transition);
+
+      &:hover {
+        box-shadow: inset 0 0 0 2px hsl(from var(--clr-base-bg) h s l / .6);
+      }
+    }
+
+    svg {
+      width: 26px;
+      aspect-ratio: 1;
+    }
+  }
+
+  &__btn {
+    opacity: 0;
+    transition: opacity var(--transition);
+    grid-column: 1;
+    grid-row: 1;
+    pointer-events: none;
+    visibility: hidden;
+
+    &.is-show {
+      opacity: 1;
+      pointer-events: auto;
+      visibility: visible;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+@use "@global" as *;
+
+.section-content {
+  display: grid;
+  @include adaptive-value('gap', 30, 28);
+
+  &__header {
+    text-align: center;
+  }
+
+  &__body {
+    max-width: 900px;
+    margin-inline: auto;
+  }
+}

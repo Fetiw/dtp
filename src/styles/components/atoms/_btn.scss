@@ -1,0 +1,37 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--clr-aquamarine);
+  font-family: var(--family-second), sans-serif;
+  color: var(--clr-base);
+  padding-block: 13px;
+  padding-right: 20px;
+  padding-left: 25px;
+  justify-content: center;
+  border-radius: 12px;
+
+  @media (hover: hover) {
+    cursor: pointer;
+    transition: background-color var(--transition);
+
+    &:hover {
+      background-color: var(--clr-anakiwa);
+    }
+  }
+
+  &__icon {
+    width: 48px;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #59E8D7;
+
+    svg {
+      width: 40%;
+      aspect-ratio: 1;
+    }
+  }
+}

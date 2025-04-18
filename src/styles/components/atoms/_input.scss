@@ -1,0 +1,27 @@
+input[type="tel"],
+input[type="email"],
+input[type="text"] {
+  font-size: 16px;
+  border-radius: 12px;
+  border: 2px solid hsl(from var(--clr-base-bg) h s l / .2);
+  padding: 27px 24px;
+  width: 100%;
+  line-height: 1;
+  transition: border-color var(--transition);
+
+  &::placeholder {
+    color: hsl(from var(--clr-base-bg) h s l / .7);
+  }
+
+  &:hover {
+    border-color: hsl(from var(--clr-white) h s l / .6);
+  }
+
+  &:focus {
+    border-color: hsl(from var(--clr-base-bg) h s l);
+  }
+
+  &.wpcf7-not-valid {
+    border-color: hsl(from var(--clr-red) h s l);
+  }
+}

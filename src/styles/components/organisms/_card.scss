@@ -1,0 +1,150 @@
+@use "@global" as *;
+
+.card {
+  border-radius: 12px;
+  background-color: var(--clr-pattens-blue);
+  padding-inline: 48px;
+  padding-block: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 26px;
+
+  @include breakpoint('lg') {
+    align-items: flex-start;
+    padding-left: 36px;
+    padding-block: 40px;
+    padding-right: 70px;
+    gap: 32px;
+  }
+
+  &__header {
+    padding-inline: 20px;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__number {
+    font-family: var(--family-second), sans-serif;
+    font-size: 40px;
+    line-height: 1;
+  }
+
+  &__icon {
+    width: 58px;
+    aspect-ratio: 1;
+
+    svg {
+      width: 100%;
+      aspect-ratio: 1;
+    }
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    line-height: 1.2;
+    text-align: center;
+
+    @include breakpoint('lg') {
+      text-align: left;
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 17px;
+  }
+
+  &__content {
+    font-size: 16px;
+  }
+
+  &__action {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  &--black {
+    background-color: var(--clr-gable-green);
+    color: var(--clr-base-bg);
+    padding-inline: 14px;
+    padding-bottom: 14px;
+
+    @include breakpoint('lg') {
+      padding-inline: 36px;
+      padding-bottom: 48px;
+    }
+  }
+
+  &--black & {
+    &__header {
+      padding-inline: initial;
+    }
+
+    &__number {
+      @include adaptive-value('font-size', 60, 50);
+    }
+  }
+
+  &--center {
+    align-items: center;
+
+    @include breakpoint('lg') {
+      padding-inline: 36px;
+    }
+  }
+
+  &--center & {
+    &__main {
+      text-align: center;
+    }
+  }
+
+  &--payment {
+    padding-top: 16px;
+    gap: 0;
+  }
+
+  &--payment & {
+    &__icon {
+      width: 120px;
+    }
+
+    &__title {
+      max-width: 350px;
+      margin-inline: auto;
+      font-weight: 500;
+      @include adaptive-value('font-size', 22, 17);
+    }
+
+    &__action {
+      margin-top: 26px;
+
+      @include breakpoint('lg') {
+        margin-top: 32px;
+      }
+    }
+  }
+
+  .elastic-gradient {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 90%;
+    left: 0;
+    z-index: -1;
+    border-radius: 75% 25% 70% 30% / 30% 30% 70% 70%;
+  }
+
+  .icon-blessing {
+    position: absolute;
+    width: 140px;
+    max-width: none;
+    transform: translate(-50%, -70%);
+    left: 50%;
+  }
+}

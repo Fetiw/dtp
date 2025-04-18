@@ -1,0 +1,21 @@
+.form-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    .btn {
+      flex-grow: 1;
+    }
+  }
+}

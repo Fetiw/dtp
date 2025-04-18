@@ -1,0 +1,8 @@
+import './blockCooperation.js'
+import './blockFooter.js'
+import './blockHowPayment.js'
+import './blockQuestion.js'
+import './blockReceive.js'
+import './blockTrust.js'
+import './blockWeUnderstand.js'
+import './constants.js'

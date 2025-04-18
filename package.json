@@ -1,0 +1,25 @@
+{
+  "name": "dtp",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "predeploy": "vite build --base=/dtp/",
+    "deploy": "gh-pages -d dist"
+  },
+  "devDependencies": {
+    "@vituum/vite-plugin-posthtml": "^1.1.0",
+    "vite": "^6.2.0",
+    "vituum": "^1.2.0"
+  },
+  "dependencies": {
+    "gh-pages": "^6.3.0",
+    "gsap": "^3.12.7",
+    "lenis": "^1.2.3",
+    "sass": "^1.86.0",
+    "swiper": "^11.2.6"
+  }
+}

@@ -1,0 +1,28 @@
+@use 'sass:map';
+@use "settings" as *;
+
+@mixin breakpoint($breakpoint) {
+  @if map.has-key($breakpoints, $breakpoint) {
+    @media (min-width: map.get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "No value found for breakpoint `#{$breakpoint}`. Available breakpoints: #{map.keys($breakpoints)}.";
+  }
+}
+
+@mixin adaptive-value($property, $startSize, $minSize) {
+  $addSize: $startSize - $minSize;
+
+  & {
+    #{$property}: calc(#{$startSize} * 1px);
+  }
+
+  @media (max-width: calc(#{$maxWidthContainer} * 1px)) {
+    & {
+      #{$property}: calc(#{$minSize} * 1px + #{$addSize} * ((100vw - #{$minContainer} * 1px) / (#{$maxWidthContainer - $minContainer})));
+    }
+  }
+}
+
+

@@ -1,0 +1,32 @@
+.block-contact {
+  display: flex;
+  flex-direction: column;
+
+  &__header {
+    text-align: center;
+    max-width: 500px;
+    margin-inline: auto;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    margin-top: 35px;
+  }
+
+  &__social {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
+  }
+
+  &__copyright {
+    text-align: center;
+    font-size: 11px;
+    color: var(--clr-pattens-blue);
+    margin-top: 24px;
+  }
+}

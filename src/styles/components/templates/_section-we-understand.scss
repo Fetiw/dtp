@@ -1,0 +1,138 @@
+@use "@global" as *;
+
+.section-we-understand {
+  padding-bottom: 40px;
+
+  @include breakpoint('lg') {
+    padding-bottom: initial;
+  }
+
+  &__body {
+    display: grid;
+    position: relative;
+    gap: 225px;
+    z-index: 1;
+
+    @include breakpoint('lg') {
+      @include adaptive-value('gap', 30, 28);
+    }
+  }
+
+  &__header {
+    text-align: center;
+  }
+
+  &__body {
+    max-width: 620px;
+    margin-inline: auto;
+  }
+
+  .line {
+    position: absolute;
+    z-index: -1;
+
+    @include breakpoint('lg') {
+      z-index: 1;
+    }
+
+    .label {
+      &__content {
+        text-align: center;
+        @include adaptive-value('width', 320, 170);
+
+        @include breakpoint('lg') {
+          text-align: left;
+        }
+      }
+
+      &__picture {
+        align-self: center;
+        position: absolute;
+        bottom: calc(100% + 15px);
+        text-align: center;
+
+        @include breakpoint('lg') {
+          text-align: left;
+          bottom: calc(100% + 20px);
+        }
+      }
+    }
+
+    &--1 {
+      bottom: auto;
+      left: 20%;
+      top: 40%;
+
+      @include breakpoint('lg') {
+        top: auto;
+        bottom: -5%;
+        left: -15%;
+      }
+
+      .label {
+        transform-origin: bottom;
+        transform: translateX(-50%) rotate(-15deg);
+        bottom: 100%;
+
+        &__picture {
+          aspect-ratio: 157 / 139;
+          @include adaptive-value('width', 157, 74);
+        }
+      }
+    }
+
+    &--2 {
+      top: 43%;
+      right: -10%;
+
+      @include breakpoint('lg') {
+        bottom: 27%;
+        right: -38%;
+      }
+
+      .label {
+        right: 100%;
+        transform: translateY(-50%) rotate(10deg);
+        transform-origin: right;
+
+        &__picture {
+          aspect-ratio: 127 / 130;
+          @include adaptive-value('width', 127, 64);
+        }
+      }
+    }
+
+    &--3 {
+      top: 94%;
+      right: -12%;
+
+      @include breakpoint('lg') {
+        top: auto;
+        bottom: 6%;
+        right: -42%;
+      }
+
+      .label {
+        right: 100%;
+        transform-origin: right;
+        transform: translateY(-50%) rotate(-15deg);
+      }
+    }
+
+    &--4 {
+      top: calc(100% + 20px);
+      left: 3%;
+      transform: translateX(0) rotate(15deg);
+
+      @include breakpoint('lg') {
+        left: initial;
+        transform: translateX(-50%) rotate(15deg);
+      }
+
+      .picture {
+        aspect-ratio: 160 / 120;
+        @include adaptive-value('width', 160, 99);
+      }
+    }
+  }
+}

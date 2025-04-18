@@ -1,0 +1,18 @@
+.swiper-pagination {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 30px;
+
+  .swiper-pagination-bullet {
+    width: 8px;
+    aspect-ratio: 1;
+    background-color: var(--clr-cutty-sark);
+    transition: background-color var(--transition);
+    border-radius: 50%;
+
+    &.swiper-pagination-bullet-active {
+      background-color: var(--clr-aquamarine);
+    }
+  }
+}

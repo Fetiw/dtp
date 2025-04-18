@@ -1,0 +1,35 @@
+@use "@global" as *;
+
+.section-receive {
+  display: grid;
+  @include adaptive-value('gap', 30, 28);
+
+  &__header {
+    text-align: center;
+
+    @include breakpoint('lg') {
+      text-align: left;
+      max-width: 800px;
+    }
+  }
+
+  &__wrapper {
+    display: grid;
+    gap: 5px;
+    container-type: inline-size;
+
+    @include breakpoint('md') {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoint('lg') {
+      grid-template-columns: 2fr 1fr;
+    }
+  }
+
+  .card-percent {
+    @include breakpoint('md') {
+      rotate: 8deg;
+    }
+  }
+}
